@@ -1,3 +1,3 @@
 #!/bin/bash
-java -cp '.:mypack/*' phonescanner.java ${@}
+java -cp '.:lib/*' phonescanner.java ${@}
 #https://info.diktamen.com/contact
