@@ -18,4 +18,5 @@ Run the run.sh file. Add the url(s) as parameters. Tested Using Bash 3.2
 
 **Windows:**
 
+Run the run.bat file. Add the url(s) as parameters. Testing using Windows 10
 
