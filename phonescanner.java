@@ -76,9 +76,10 @@ class parseWebsite {
 			buffer.append(reader.nextLine() + "\n");
 		}
 		/*
-			Parse thru the buffer to find the numbers
+			Send the buffer to be cleaned of HTML tags
+			and then to be matched against the regex
 		*/
-		List<String> found = phoneMatch.findNum(buffer.toString());
+		List<String> found = phoneMatch.findNum(cleanHTMLInput.cleanString(buffer.toString()));
 		for (String str : found)
 		{
 			numbers.add(str);
@@ -110,11 +111,10 @@ class phoneMatch {
 	{
 		List<String> matches = new ArrayList<String>();
 		Pattern pat = Pattern.compile(phoneRegex);
-		Matcher matcher = pat.matcher(cleanHTMLInput.cleanString(input));
+		Matcher matcher = pat.matcher(input);
 		while(matcher.find())
 		{
 			matches.add(matcher.group(0));
-			//System.out.println(input + "\n\n");
 		}
 		return (matches);
 	}
